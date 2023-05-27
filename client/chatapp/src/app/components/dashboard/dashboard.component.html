@@ -1,0 +1,63 @@
+<div class="flex flex-wrap">
+    <div class="w-full">
+        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+                    (click)="toggleTabs(1)"
+                    [ngClass]="{'text-pink-600 bg-white': openTab !== 1, 'text-white bg-pink-600': openTab === 1}">
+                    <i class="fas fa-space-shuttle text-base mr-1"></i> Conversations
+                </a>
+            </li>
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+                    (click)="toggleTabs(2)"
+                    [ngClass]="{'text-pink-600 bg-white': openTab !== 2, 'text-white bg-pink-600': openTab === 2}">
+                    <i class="fas fa-cog text-base mr-1"></i> Contacts
+                </a>
+            </li>
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
+                    (click)="toggleTabs(3)"
+                    [ngClass]="{'text-pink-600 bg-white': openTab !== 3, 'text-white bg-pink-600': openTab === 3}">
+                    <i class="fas fa-briefcase text-base mr-1"></i> Profile
+                </a>
+            </li>
+        </ul>
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+            <div class="px-4 py-5 flex-auto">
+                <div class="tab-content tab-space">
+                    <div [ngClass]="{'hidden': openTab !== 1, 'block': openTab === 1}">
+                        <p>
+                            All the conversations
+                            <br />
+                            <br />
+                            All the conversations
+                        </p>
+                    </div>
+                    <div [ngClass]="{'hidden': openTab !== 2, 'block': openTab === 2}">
+                        <p>
+                            All the contacts
+                            <br />
+                            <br />
+                            All the contacts
+                        </p>
+                    </div>
+                    <div [ngClass]="{'hidden': openTab !== 3, 'block': openTab === 3}">
+                        <p>
+                            {{ userId }}
+                            <br />
+                            <br />
+                            {{ userId }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center content-center">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+               New Conversation
+            </button>
+        </div>
+
+    </div>
+</div>
